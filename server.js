@@ -13,13 +13,16 @@ server.get('/api/data', (req, res) => {
     mock.filter(data => {
       if (typeof req.query.type !== 'undefined') {
         if (data.id.toString() === req.query.q
-          || data.companyName.includes(req.query.q)
-          || data.email.includes(req.query.q))
+          || data.companyName.toLowerCase().includes(req.query.q.toLowerCase())
+          || data.email.toLowerCase().includes(req.query.q.toLowerCase()))
           req.query.type === data.type.toString()
             ? response.push(data)
             : null;
       }
-      else if (data.id.toString() === req.query.q || data.companyName.includes(req.query.q) || data.email.includes(req.query.q)) response.push(data);
+      else if (data.id.toString() === req.query.q
+        || data.companyName.toLowerCase().includes(req.query.q.toLowerCase())
+        || data.email.toLowerCase().includes(req.query.q.toLowerCase()))
+        response.push(data);
     });
   }
 
