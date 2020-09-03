@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="assets/css/style.css" rel="stylesheet">
+    <script src="assets/lib/jquery-3.5.1.min.js"></script>
+    <script src="assets/js/main.js"></script>
+  </head>
+
+  <body onload="init();">
+    <div class="wrapper">
+      <div class="header">
+        <div class="title float-left">PLATFORM ADMIN</div>
+        <div class="filter float-right">
+          <label>FILTER:</label>
+          <ul>
+            <li id="filterall" onclick="select('all');">All</li>
+            <li id="filterfree" onclick="select('free');">Free</li>
+            <li id="filterpaying" onclick="select('paying');">Paying</li>
+          </ul>
+        </div>
+      </div>
+      <div class="content-wrapper">
+        <div class="sub-header">
+          <input type="text" placeholder="Search" class="search-input bottom left">
+          <button class="btn back-green color-white create-new-account bottom right">Create new Account</button>
+        </div>
+      </div>
+      <div class="content-wrapper">
+        <div class="content">
+          <table class="results">
+            <thead>
+              <tr>
+                <th class="id">ID</th>
+                <th class="company-name">Company Name</th>
+                <th class="email">Owner email</th>
+              </tr>
+            </thead>
+            <tbody class="search-results">
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </body>
+
+</html>
